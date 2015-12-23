@@ -14,6 +14,8 @@ class ArticlesController extends VanillaController {
     public $Uses = array('ArticleModel');
 
     public function index() {
+        $this->setData('TEST', $this->ArticleModel->getWhere(array('post_type' => 'post', 'post_status' => 'publish')));
+
         $this->render();
     }
 }
