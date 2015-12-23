@@ -46,3 +46,4 @@ Access to the WordPress installation will be restricted to logged in WordPress u
 * To make the experience more seamless for authors, the WordPress media upload folder path should be changed to the Vanilla uploads folder. To do this, open up the `wp-config.php` file and add this `define('UPLOADS', $_SERVER['DOCUMENT_ROOT'] . '/uploads/articles');` (change this path to reflect the absolute path to your Vanilla installation) above the `require_once(ABSPATH . 'wp-settings.php');` line.
 * Since your WordPress installation is basically hidden from non-authors, how would WordPress' built-in post publish scheduling work?
 * In what category should discussions for WordPress posts be created in within Vanilla?
+* How would category and user permissions in Vanilla come into play?
