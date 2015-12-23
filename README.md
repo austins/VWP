@@ -22,7 +22,7 @@ VWP stands for "Vanilla WordPress" and it lets you have Vanilla as a front-end a
 
 ---
 
-## How It Will Work
+## Implementation Concept (How It Will Work)
 
 There is no user integration at all. The Vanilla and WordPress databases are not "glued" in any way. Comment functionality in WordPress will become obsolete as Vanilla will handle the comments for posts once VWP is installed. Only data is fetched from the WordPress database and displayed in Vanilla.
 
@@ -37,7 +37,7 @@ Access to the WordPress installation will be restricted to logged in WordPress u
 **VWP WordPress Plugin:**
 
 * Posts will have a custom post meta called `vanilla_discussion_id` or something like this which will store the ID of the discussion in Vanilla that will contain the comments for the post.
-* When a *new* post is *published*, a discussion will be created in Vanilla. The discussion title will be the name of the article. The discussion body will be the name of the article hyperlinked with a relative path to the page where the user could view it in Vanilla. The discussion body is never seen, since direct access to the discussion page will be redirected to the `ArticleController` page.
+* When a *new* post is *published*, a discussion will be created in Vanilla. The `Type` property of the discussion will be set to `VWP` or `Article`, and the `ForeignID` property will be set to the WordPress post ID. The discussion title will be the name of the article. The discussion body will be the name of the article hyperlinked with a relative path to the page where the user could view it in Vanilla. The discussion body is never seen, since direct access to the discussion page will be redirected to the `ArticleController` page.
 * The user, or author, of the discussion in Vanilla is determined by a new field added to the WordPress user profile settings called `Vanilla User ID`. If no ID is set or the user doesn't exist, then the default user of the discussion will be the Vanilla system user.
 * [Optional implementation] When a published post is deleted, its discussion in Vanilla will be deleted along with its comments. This is an optional implementation because I may decide to make it keep the discussion to be safe, or only have it delete discussions that have no comments.
 
