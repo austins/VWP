@@ -8,7 +8,7 @@
 
 $ApplicationInfo['VWP'] = array(
     'Description' => 'Lets you have Vanilla as a front-end and WordPress be a back-end tool to manage articles.',
-    'Version' => '0.0.1a',
+    'Version' => '0.0.1a1',
     'Author' => 'Austin S.',
     'AuthorUrl' => 'https://github.com/austins',
     //'Url' => '',
